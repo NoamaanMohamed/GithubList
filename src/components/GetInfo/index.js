@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import Button from '@mui/material/Button';
 
 const GetInfo = (repo) => {
-    const [repoInfo, setRepoInfo] = useState('test');
+    const [repoInfo, setRepoInfo] = useState();
     // setRepoInfo(getRepo())
     const onButtonClick = async ({ repo }) => {
         console.log('help', repo)
@@ -13,7 +13,7 @@ const GetInfo = (repo) => {
     }
     return (
         <div>
-            <button onClick={() => onButtonClick(repo)}>info</button>
+            <Button onClick={() => onButtonClick(repo)}>info</Button>
             <p>{repoInfo}</p>
         </div>
     )

@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 import { SearchForm, Result} from './components';
 import { getResult } from './actions';
-
+import '@fontsource/roboto/300.css';
 
 
 function App() {
   const result = useSelector(state => state.result);
-  const username = useSelector(state => state.username);
+  //const username = useSelector(state => state.username);
   const loading = useSelector(state => state.loading);
   const error = useSelector(state => state.error)
 
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{username ? username : ''}</h1>
+      <h1>Please enter your username below</h1>
 
       <SearchForm getResult={search} />
 

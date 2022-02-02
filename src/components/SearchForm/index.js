@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 
 function SearchForm({ getResult }) {
@@ -6,6 +8,7 @@ function SearchForm({ getResult }) {
     const [ username, setUsername ] = useState("")
 
     const handleSubmit = e => {
+        e.preventDefault();
         getResult(username);
     }
 
@@ -17,11 +20,11 @@ function SearchForm({ getResult }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="username">username</label>
+          
                 
-            <input type="text" id="username" name= "username" value={username} onChange={updateInput} />
+            <TextField type="text" id="username" label = "username" name= "username" value={username} onChange={updateInput} />
            
-            <input type="submit" value="Search" />
+            <Button  variant="contained" type="submit" value="Submit" >Search</Button>
         </form>
     );
 };
